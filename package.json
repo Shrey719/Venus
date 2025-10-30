@@ -1,0 +1,21 @@
+{
+  "name": "venus",
+  "version": "1.0.0",
+  "description": "A tarpit designed to posion and trap AI scrapers",
+  "main": "src/venus.js",
+  "type": "module",
+  "sideEffects": [
+    "./src/venus.js"
+  ],
+  "scripts": {
+    "start": "node testing/index.js",
+    "build": "npx rspack build",
+    "devbuild": "npx rspack build && cp dist/venus.bundle.js testing/venus.js"
+  },
+  "author": "Shrey Yadav",
+  "license": "AGPL-3.0-only",
+  "dependencies": {
+    "@rspack/cli": "^1.6.0",
+    "express": "^5.1.0"
+  }
+}
