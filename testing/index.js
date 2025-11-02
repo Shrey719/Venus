@@ -5,7 +5,11 @@ const app = express()
 
 app.use(express.static("testing/static"))
 
-venus(app)
+function loggingFunction(req, res) {
+    console.log(`${req.headers['user-agent']}\n${req.ip}`)  
+}   
+
+venus(app, loggingFunction)
 
 app.listen(8080, () => {
     console.log("Listening on port 8080")

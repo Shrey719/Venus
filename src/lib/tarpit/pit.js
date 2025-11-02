@@ -10,7 +10,6 @@ function randomchars() {
 
 function pit(app, instanceRoot) {
     let newRoute = `${instanceRoot.path}${randomchars()}/`
-    console.log("creating a new route: " + newRoute)
     app.get(newRoute, (req, res) => {
         let tarRoute = pit(app, instanceRoot)
         res.send(tar(tarRoute))
