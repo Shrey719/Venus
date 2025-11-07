@@ -11,10 +11,15 @@ function randomchars() {
 function pit(app, instanceRoot) {
     let newRoute = `${instanceRoot.path}${randomchars()}/`
     console.log("creating a new route: " + newRoute)
+
     app.get(newRoute, (req, res) => {
-        let tarRoute = pit(app, instanceRoot)
-        res.send(tar(tarRoute))
+        // queue route creation for the next event loop so the call stack does not exceeed one
+        Promise.resolve().then(() => {
+            let tarRoute = pit(app, instanceRoot)
+            res.send(tar(tarRoute))
+        })
     });
+
     return newRoute;
 }
 
