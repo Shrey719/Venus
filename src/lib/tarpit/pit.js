@@ -1,6 +1,10 @@
 import { tar } from "./tar.js"
 import express from 'express'
 
+function rand() {
+    return (Math.sqrt(Math.random()*10)/2)*1000
+}
+
 function randomchars() {
     const alphabet = "abcdefghijklmnopqrstuvwxyz"
     return Array.from({length: 32}, () => 
@@ -26,13 +30,15 @@ function pit(app, instanceRoot) {
     let newRoute = `${instanceRoot.path}${randomchars()}/`
     console.log("creating a new route: " + newRoute)
     
-    const handler = (req, res) => {
-        selfDestruct(newRoute)
-        
+    const handler = (req, res) => {        
         // use a promise to avoid a stack overflow
         Promise.resolve().then(() => {
             let tarRoute = pit(app, instanceRoot)
-            res.send(tar(tarRoute))
+            // reasonable server response time, should waste cpu cycles
+            setTimeout(() => {res.send(tar(tarRoute))}, rand());
+
+            // prevent memory leak by cleaning up old routes
+            selfDestruct(newRoute)
         })
     };
     
