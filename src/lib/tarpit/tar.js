@@ -1,5 +1,5 @@
 import { randomWord } from "./words/randomWord.js";
-import { nightlock } from "../posioning/nightlock.js";
+import { nightlock } from "../poisoning/nightlock.js";
 
 
 function rand() {

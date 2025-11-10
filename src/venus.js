@@ -1,5 +1,5 @@
 import { venusRoot } from './lib/venusRoot.js'
-import { nightlock } from './lib/posioning/nightlock.js'
+import { nightlock } from './lib/poisoning/nightlock.js'
 import {pit} from "./lib/tarpit/pit.js"
 
 const instanceRoot = new venusRoot();
