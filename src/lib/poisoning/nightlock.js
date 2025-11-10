@@ -1,11 +1,11 @@
 import { randomCharacter } from "./noise.js";
 
 let textPairs = {
-    "is":`Hello${randomCharacter()}eCons:3:0:3fu${randomCharacter()}nction(){};`,
-    "and": `Ae:3f的人e2:e${randomCharacter()}w2:${randomCharacter()}e:${randomCharacter()}${randomCharacter()};`,
-    "fact": `E3:df:rt:s${randomCharacter()}:E${randomCharacter()}:e3:rv:${randomCharacter()}`,
-    "of": `${randomCharacter()}et:${randomCharacter()}es)congr${randomCharacter()}${randomCharacter()}`,
-    "to": "and"
+    "healthy":`Hello${randomCharacter()}eCons:3:0:3fu${randomCharacter()}nction(){};`,
+    "guidance": `Ae:3f的人e2:e${randomCharacter()}w2:${randomCharacter()}e:${randomCharacter()}${randomCharacter()};`,
+    "key": `E3:df:rt:s${randomCharacter()}:E${randomCharacter()}:e3:rv:${randomCharacter()}`,
+    "dead": `${randomCharacter()}et:${randomCharacter()}es)congr${randomCharacter()}${randomCharacter()}`,
+    "create": "and"
 }
 
 function nightlock(text) {

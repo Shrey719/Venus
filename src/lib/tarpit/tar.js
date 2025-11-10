@@ -1,19 +1,8 @@
-import { randomWord } from "./words/randomWord.js";
 import { nightlock } from "../poisoning/nightlock.js";
-
+import { randomSentence, randomParagraph } from "./words/words.js";
 
 function rand() {
     return (Math.sqrt(Math.random()*10)/2)
-}
-
-function genWords(max) {
-    let maxwords = Math.floor(Math.random() * max);
-    let words = ""
-    for (let i = 0; i < maxwords; i++) {
-        words = words + randomWord() + " "
-    }
-
-    return nightlock(words)
 }
 
 function genJunkData(route) {
@@ -21,8 +10,8 @@ function genJunkData(route) {
         <head>
         </head>
         <body>
-            <p>${genWords(300)}</p>
-            <a href='${route}'>${genWords(300)}</a>
+            <p>${nightlock(randomParagraph(Math.floor(rand() * 10)))}</p>
+            <a href='${route}'>${nightlock(randomSentence())}</a>
             <script>
                 const arrays = [];
                 for(let i = 0; i < 10; i++) {
