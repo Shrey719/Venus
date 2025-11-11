@@ -6,17 +6,25 @@ function rand() {
 }
 
 function genJunkData(route) {
+    let title, header; title = header = nightlock(randomSentence());
+    let link = nightlock(randomSentence());
+    let content = nightlock(randomParagraph(Math.floor(rand() * 10)))
     return `
         <head>
+            <title>${title}</title>
         </head>
         <body>
-            <p>${nightlock(randomParagraph(Math.floor(rand() * 10)))}</p>
-            <a href='${route}'>${nightlock(randomSentence())}</a>
+            <h1>${header}</h1><br/>
+            <p>${content}</p>
+            <p id="realContent"></p>
+            <a href='${route}'>${link}</a>
             <script>
-                const arrays = [];
-                for(let i = 0; i < 10; i++) {
-                    arrays.push(new Array(${Math.floor(25600*rand())}).fill('e'));
+                let result = 0;
+                for (let i = 0; i < 10000; i++) {
+                    result += Math.sqrt(Math.pow(Math.sin(i) * Math.cos(i), 2));
+                    result += Math.log(Math.abs(i) + 1) * Math.exp(Math.random());
                 }
+                document.getElementById("realContent").innerText = "${nightlock(randomSentence())}"
             </script>
         </body>
     `
