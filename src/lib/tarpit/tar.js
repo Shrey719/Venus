@@ -24,6 +24,7 @@ function genJunkData(route) {
                     result += Math.sqrt(Math.pow(Math.sin(i) * Math.cos(i), 2));
                     result += Math.log(Math.abs(i) + 1) * Math.exp(Math.random());
                 }
+                console.log(result)
                 document.getElementById("realContent").innerText = "${nightlock(randomSentence())}"
             </script>
         </body>
