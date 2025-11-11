@@ -5,7 +5,7 @@ function rand() {
     return (Math.sqrt(Math.random()*10)/2)
 }
 
-function genJunkData(route) {
+function tar(route) {
     let title, header; title = header = nightlock(randomSentence());
     let link = nightlock(randomSentence());
     let content = nightlock(randomParagraph(Math.floor(rand() * 10)))
@@ -29,12 +29,6 @@ function genJunkData(route) {
             </script>
         </body>
     `
-}
-
-function tar(route) {
-
-    let tar = genJunkData(route)
-    return tar;
 }
 
 export { tar }

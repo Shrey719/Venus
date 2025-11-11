@@ -25,6 +25,7 @@ import{createRequire as e}from"node:module";var a={2594:function(e,a,i){var t=i(
                     result += Math.sqrt(Math.pow(Math.sin(i) * Math.cos(i), 2));
                     result += Math.log(Math.abs(i) + 1) * Math.exp(Math.random());
                 }
+                console.log(result)
                 document.getElementById("realContent").innerText = "${o(m())}"
             </script>
         </body>
