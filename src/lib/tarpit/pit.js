@@ -33,9 +33,8 @@ function pit(app, instanceRoot) {
     const handler = (req, res) => {        
         // use a promise to avoid a stack overflow
         Promise.resolve().then(() => {
-            let tarRoute = pit(app, instanceRoot)
             // reasonable server response time, should waste cpu cycles
-            setTimeout(() => {res.send(tar(tarRoute))}, rand());
+            setTimeout(() => {res.send(tar(pit(app, instanceRoot)))}, rand());
 
             // prevent memory leak by cleaning up old routes
             selfDestruct(newRoute)
@@ -44,6 +43,8 @@ function pit(app, instanceRoot) {
     
     routeHandlers.set(newRoute, handler);
     tarpitRouter.get(newRoute, handler);
+    // FOR TESTIng PURPOSES IF THIS MAKES IT TO PROD JUTS SHOOT ME
+    // fetch(`http://localhost:8080${newRoute}`)
 
     // just so it doesnt get attached multiple times
     if (!inited) {

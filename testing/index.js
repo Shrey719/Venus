@@ -5,7 +5,8 @@ const app = express()
 
 app.use(express.static("testing/static"))
 
-venus(app)
+let v = venus(app, "HELLO")
+fetch(`http://localhost:8080${v}`)
 
 app.listen(8080, () => {
     console.log("Listening on port 8080")
