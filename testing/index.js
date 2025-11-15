@@ -9,8 +9,6 @@ app.get("/", (req, res) =>{
     res.send(`<html>Pretend this has some real page content <a href="${v}">some text</a> </html>`)
 })
 
-fetch(`http://localhost:8080${v}`)
-
 app.listen(8080, () => {
     console.log("Listening on port 8080")
 })

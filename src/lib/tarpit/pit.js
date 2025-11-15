@@ -1,20 +1,25 @@
 import { tar } from "./tar.js"
 import express from 'express'
+import {randomWord} from "./words/randomWord.js"
 
 function rand() {
     return (Math.sqrt(Math.random()*10)/2)*1000
 }
 
-function randomchars() {
-    const alphabet = "abcdefghijklmnopqrstuvwxyz"
-    return Array.from({length: 32}, () => 
-        alphabet[Math.floor(Math.random() * alphabet.length)]
-    ).join('')
-}
-
 const tarpitRouter = express.Router();
 const routeHandlers = new Map(); 
 let inited = false;
+
+function makeRoute() {
+    let length = Math.floor(Math.sqrt(Math.random()) * 10)
+    let words = "" 
+    for (let i = 0; i < length; i++) {
+        words = words + randomWord() + "-" 
+    }
+    if (words.endsWith("-")) words = words.slice(0, -1)
+    return words
+}
+
 function selfDestruct(route) {
     if (routeHandlers.has(route)) {
         routeHandlers.delete(route);
@@ -27,7 +32,7 @@ function selfDestruct(route) {
 }
 
 function pit(app, instanceRoot) {
-    let newRoute = `${instanceRoot.path}${randomchars()}/`
+    let newRoute = `${instanceRoot.path}${makeRoute()}/`
     console.log("creating a new route: " + newRoute)
     
     const handler = (req, res) => {        
