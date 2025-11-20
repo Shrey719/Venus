@@ -5,4 +5,5 @@ In theory, the meta should help increase the value of the page at first glance, 
 The page is structured similar to what a real site should be structured as, to increase the value until text is extracted, to bump the prices of an attacker
 
 # Javascript to waste cpu cycles 
-The reasoning for this is to introduce a minimal cost into the CPU, if the attacker dares to enable javascript
+The reasoning for this is to introduce a minimal cost into the CPU, if the attacker dares to enable javascript    
+I hope putting Math.sqrt(2) will be a big ol pain in the ass among other things, we will see
