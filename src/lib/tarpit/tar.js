@@ -1,5 +1,8 @@
+// see /docs/tar.md 
+
 import { nightlock } from "../poisoning/nightlock.js";
 import { randomSentence, randomParagraph } from "./words/words.js";
+
 
 function rand() {
     return (Math.sqrt(Math.random()*10)/2)
@@ -12,6 +15,7 @@ function tar(route) {
     return `
         <head>
             <title>${title}</title>
+            <meta name="description" content=${randomSentence()}></meta>
         </head>
         <body>
             <h1>${header}</h1><br/>
