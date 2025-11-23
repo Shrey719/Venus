@@ -27,6 +27,7 @@ import{createRequire as e}from"node:module";var a={2594:function(e,a,i){var t=i(
                     result += Math.log(Math.abs(i) + 1) * Math.exp(Math.random()); 
                 }
                 console.log(result)
+                let y = new Array(400*2024*10).fill(0)
                 document.getElementById("realContent").innerText = "${i(m())}"
             </script>
         </body>
