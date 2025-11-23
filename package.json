@@ -1,8 +1,8 @@
 {
-  "name": "venus",
+  "name": "venus-pit",
   "version": "1.0.0",
-  "description": "A tarpit designed to posion and trap AI scrapers",
-  "main": "src/venus.js",
+  "description": "Express.js-based tarpit",
+  "main": "dist/venus.bundle.js",
   "type": "module",
   "sideEffects": [
     "./src/venus.js"
