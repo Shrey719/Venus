@@ -2,11 +2,12 @@ import { venusRoot } from "../src/lib/venusRoot.js";
 
 function testVenusRoot() {
     let vRoot = new venusRoot()
-    if (vRoot.path.length == 34) {
+    let custom = new venusRoot("ello")
+    // 32 chars long + the two slashes
+    if (vRoot.path.length == 34 && custom.path == "/ello/") {
         return true
-    } else {
-        return false
-    }
+    } 
+    return false
 }
 
 export {testVenusRoot}
