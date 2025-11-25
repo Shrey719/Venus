@@ -40,7 +40,7 @@ class Graph {
     return distances.slice(0, 3); // 3 closest
   }
 
-  sentance(start, length) {
+  sentence(start, length) {
     let sentence = [start];
     let recent = new Set([start]);
     let current = start;

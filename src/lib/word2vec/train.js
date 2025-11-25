@@ -23,7 +23,7 @@ function train(graph, sentences, epochs = 5, lr = 0.5, window=5) {
 
     for (let epoch = 0; epoch < epochs; epoch++) {
         let keys = []
-        for(const key in graph.map.keys()) {
+        for(const key of graph.map.keys()) {
                 keys.push(key);
         }
         sentences_tokenized.forEach((sentence) =>{
@@ -47,12 +47,13 @@ function train(graph, sentences, epochs = 5, lr = 0.5, window=5) {
                 }
                 graph.set(w1, v1);
 
-                let neg = keys[Math.random(keys.length)];
-                while (neg == w1 ) {
-                    neg = keys[Math.random(keys.length)];
+                let neg = keys[Math.floor(Math.random() * keys.length)];
+                while (neg == w1) {
+                    neg = keys[Math.floor(Math.random() * keys.length)];
                 }
                 let vneg = graph.get(neg);
-                for (let d = 0; d < graph.dimensions; d++) {
+
+                for (let d = 1; d < graph.dimensions; d++) {
                     let diff_neg = vneg[d] - v1[d];
                     v1[d] = v1[d] - lr * diff_neg * 0.1;
                     vneg[d] = vneg[d] + lr * diff_neg * 0.1;
