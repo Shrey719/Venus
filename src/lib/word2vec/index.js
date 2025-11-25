@@ -4,4 +4,10 @@ import train from "./train.js"
 
 let cube = new Graph(512);
 train(cube, data, 10);
-console.log(cube.sentence("Look", 50))
+function gen(number) {
+    let tokens = data.split(" ");
+    let text = cube.sentence(tokens[Math.floor(Math.random() * tokens.length)], 50);
+    return text;
+}
+
+export default gen
