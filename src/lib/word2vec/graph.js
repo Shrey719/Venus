@@ -3,9 +3,10 @@ class Graph {
     this.map = new Map();
     this.dimensions = dimensions;
   }
-  set(value, ...cords) {
+  set(value, cords) {
     if (cords.length !== this.dimensions) {
       console.error("Expected " + this.dimensions + " got " + cords.length);
+      throw Error()
     }
     this.map.set(value, cords);
   }
