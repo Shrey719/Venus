@@ -21,47 +21,47 @@ function train(graph, sentences, epochs = 5, lr = 0.5, window=5) {
         }
     })
 
-    for (let epoch = 1; epoch < epochs; epoch++) {
+    for (let epoch = 0; epoch < epochs; epoch++) {
         let keys = []
         for(const key in graph.map.keys()) {
                 keys.push(key);
         }
-    }
-    sentences_tokenized.forEach((sentence) =>{
-        for (let i = 0; i < sentence.length; i++) {
-            let w1 = sentence[i];
-            let v1 = graph.get(w1);
+        sentences_tokenized.forEach((sentence) =>{
+            for (let i = 0; i < sentence.length; i++) {
+                let w1 = sentence[i];
+                let v1 = graph.get(w1);
 
-            for (let j = Math.max(0, i - window); j <= Math.min(sentence.length - 1, i + window); j++) {
-                if (j != i) {
-                    let w2 = sentence[j];
-                    let v2 = graph.get(w2);
+                for (let j = Math.max(0, i - window); j <= Math.min(sentence.length - 1, i + window); j++) {
+                    if (j != i) {
+                        let w2 = sentence[j];
+                        let v2 = graph.get(w2);
 
-                    let weight = 1/Math.abs(j - i)
-                    for (let d = 0; d < graph.dimensions; d++) {
-                        let diff = v2[d] - v1[d];
-                        v1[d] = v1[d] + lr * diff * weight;
-                        v2[d] = v2[d] - lr * diff * 0.5 * weight
+                        let weight = 1/Math.abs(j - i)
+                        for (let d = 0; d < graph.dimensions; d++) {
+                            let diff = v2[d] - v1[d];
+                            v1[d] = v1[d] + lr * diff * weight;
+                            v2[d] = v2[d] - lr * diff * 0.5 * weight
+                        }
+                        graph.set(w2, v2);
                     }
-                    graph.set(w2, v2);
                 }
-            }
-            graph.set(w1, v1);
+                graph.set(w1, v1);
 
-            let neg = keys[Math.random(keys.length)];
-            while (neg == w1 ) {
-                neg = keys[Math.random(keys.length)];
+                let neg = keys[Math.random(keys.length)];
+                while (neg == w1 ) {
+                    neg = keys[Math.random(keys.length)];
+                }
+                let vneg = graph.get(neg);
+                for (let d = 0; d < graph.dimensions; d++) {
+                    let diff_neg = vneg[d] - v1[d];
+                    v1[d] = v1[d] - lr * diff_neg * 0.1;
+                    vneg[d] = vneg[d] + lr * diff_neg * 0.1;
+                }
+                graph.set(neg, vneg);
+                graph.set(w1, v1);  
             }
-            let vneg = graph.get(neg);
-            for (let d = 0; d < graph.dimensions; d++) {
-                let diff_neg = vneg[d] - v1[d];
-                v1[d] = v1[d] - lr * diff_neg * 0.1;
-                vneg[d] = vneg[d] + lr * diff_neg * 0.1;
-            }
-            graph.set(neg, vneg);
-            graph.set(w1, v1);  
-        }
-    })
+        })
+    }
 }
 
 
