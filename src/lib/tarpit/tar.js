@@ -1,22 +1,16 @@
 // see /docs/tar.md 
 
-import { nightlock } from "../poisoning/nightlock.js";
-import { randomSentence, randomParagraph } from "./words/words.js";
-
-
-
-function rand() {
-    return (Math.sqrt(Math.random()*10)/2)
-}
+import markov from "./markov.js"
+import corpora from "./corpora.js"
 
 function tar(route) {
-    let title, header; title = header = nightlock(randomSentence());
-    let link = nightlock(randomSentence());
-    let content = nightlock(randomParagraph(Math.floor(rand() * 10)))
+    let title, header; title = header = markov(corpora, 2)
+    let link = markov(corpora, Math.floor(Math.random()*10)+1);
+    let content = markov(corpora, 50)
     return `
         <head>
             <title>${title}</title>
-            <meta name="description" content=${randomSentence()}></meta>
+            <meta name="description" content=${markov(corpora, Math.floor(Math.random()*10))}></meta>
         </head>
         <body>
             <h1>${header}</h1><br/>
@@ -31,7 +25,7 @@ function tar(route) {
                 }
                 console.log(result)
                 let y = new Array(400*2024*10).fill(0)
-                document.getElementById("realContent").innerText = "${nightlock(randomSentence())}"
+                document.getElementById("realContent").innerText = "${markov(corpora, 50+Math.floor(Math.random()*10))}"
             </script>
         </body>
     `
