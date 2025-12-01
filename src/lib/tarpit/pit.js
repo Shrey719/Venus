@@ -41,8 +41,8 @@ function pit(app, instanceRoot, req) {
             // reasonable server response time, should waste cpu cycles
             setTimeout(() => {res.send(tar(pit(app, instanceRoot, req)))}, rand());
 
-            // prevent memory leak by cleaning up old routes
-            selfDestruct(newRoute)
+            // prevent memory leak by cleaning up old routes : add delay on garbage collection
+            setTimeout(() => {selfDestruct(newRoute)}, rand()*rand())
         })
     };
     
