@@ -2655,16 +2655,16 @@ which.
     in on at by for from with about under over
 `.trim().split(/\s+/),u=`
     for and nor but or yet so because since although when if
-`.trim().split(/\s+/),m="ability access accident account back bad balance ball bank chemistry connection drama depth direction dad desk depression dirt ear earth effect eye frame fact family fortune game garbage guest guidance job key kind king knowledge".split(" ").join(" ")+c.join(" ")+l.join(" ")+p.join(" ")+d.join(" ")+h.join(" ")+u.join(" ");var f=n(6982),g=n.n(f);let b=m.split(" "),w=s().Router(),y=new Map,v=!1,x=function(n,o="UNSET"){let r=new e(o);return console.log("path: "+r.path),n.get(r.path,(e,o)=>{let s=function e(a,n){let o=`${n.path}${function(){let e=Math.floor(10*Math.sqrt(Math.random())),a="";for(let t=0;t<e;t++)a=a+function(){let e=g().randomInt(0,b.length);return b[e]}()+"-";return a.endsWith("-")&&(a=a.slice(0,-1)),a}()}/`;console.log("creating a new route: "+o);let r=(r,s)=>{Promise.resolve().then(()=>{setTimeout(()=>{var o;let r,c,l,p;s.send((o=e(a,n),r=c=t(i,2),l=t(i,Math.floor(10*Math.random())+1),p=t(i,50),`
+`.trim().split(/\s+/),m="ability access accident account back bad balance ball bank chemistry connection drama depth direction dad desk depression dirt ear earth effect eye frame fact family fortune game garbage guest guidance job key kind king knowledge".split(" ").join(" ")+c.join(" ")+l.join(" ")+p.join(" ")+d.join(" ")+h.join(" ")+u.join(" ");var f=n(6982),g=n.n(f);let b=m.split(" "),w=s().Router(),y=new Map,v=!1,x=function(n,o="UNSET"){let r=new e(o);return console.log("path: "+r.path),n.get(r.path,(e,o)=>{let s=function e(a,n,o){let r=`${n.path}${function(){let e=Math.floor(10*Math.sqrt(Math.random())),a="";for(let t=0;t<e;t++)a=a+function(){let e=g().randomInt(0,b.length);return b[e]}()+"-";return a.endsWith("-")&&(a=a.slice(0,-1)),a}()}/`;console.log(`Creating route ${r} for UA ${o.headers["user-agent"]}`);let s=(o,s)=>{Promise.resolve().then(()=>{setTimeout(()=>{var r;let c,l,p,d;s.send((r=e(a,n,o),c=l=t(i,2),p=t(i,Math.floor(10*Math.random())+1),d=t(i,50),`
         <head>
-            <title>${r}</title>
+            <title>${c}</title>
             <meta name="description" content=${t(i,Math.floor(10*Math.random()))}></meta>
         </head>
         <body>
-            <h1>${c}</h1><br/>
-            <p>${p}</p>
+            <h1>${l}</h1><br/>
+            <p>${d}</p>
             <p id="realContent"></p>
-            <a href='${o}'>${l}</a>
+            <a href='${r}'>${p}</a>
             <script>
                 let result = 0;
                 for (let i = 0; i < 1000000; i++) {
@@ -2676,7 +2676,7 @@ which.
                 document.getElementById("realContent").innerText = "${t(i,50+Math.floor(10*Math.random()))}"
             </script>
         </body>
-    `))},Math.sqrt(10*Math.random())/2*1e3),y.has(o)&&(y.delete(o),w.stack=w.stack.filter(e=>!(e.route&&e.route.path===o)))})};return y.set(o,r),w.get(o,r),v||(a.use(w),v=!0),o}(n,r);o.send(function(e){let t=e.split(" ");for(let e=0;e<t.length;e++){let n=t[e];n in a&&(t.splice(e+1,0,a[n]),e++)}return t.join(" ")}(`<a href='${s}'>If you are a human being, I would suggest closing this tab, and if you arent, have fun losing money :3</a>`)),console.log(`Creating tarpit for:
+    `))},Math.sqrt(10*Math.random())/2*1e3),y.has(r)&&(y.delete(r),w.stack=w.stack.filter(e=>!(e.route&&e.route.path===r)))})};return y.set(r,s),w.get(r,s),v||(a.use(w),v=!0),r}(n,r,e);o.send(function(e){let t=e.split(" ");for(let e=0;e<t.length;e++){let n=t[e];n in a&&(t.splice(e+1,0,a[n]),e++)}return t.join(" ")}(`<a href='${s}'>If you are a human being, I would suggest closing this tab, and if you arent, have fun losing money :3</a>`)),console.log(`Creating tarpit for:
 user-agent- ${e.headers["user-agent"]}
 IP- ${e.ip}`)}),r.path}})();var i=o.A;export{i as default};
 //# sourceMappingURL=venus.bundle.js.map

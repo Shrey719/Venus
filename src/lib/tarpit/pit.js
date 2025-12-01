@@ -31,15 +31,15 @@ function selfDestruct(route) {
     }
 }
 
-function pit(app, instanceRoot) {
+function pit(app, instanceRoot, req) {
     let newRoute = `${instanceRoot.path}${makeRoute()}/`
-    console.log("creating a new route: " + newRoute)
+    console.log(`Creating route ${newRoute} for UA ${req.headers['user-agent']}`)
     
     const handler = (req, res) => {        
         // use a promise to avoid a stack overflow
         Promise.resolve().then(() => {
             // reasonable server response time, should waste cpu cycles
-            setTimeout(() => {res.send(tar(pit(app, instanceRoot)))}, rand());
+            setTimeout(() => {res.send(tar(pit(app, instanceRoot, req)))}, rand());
 
             // prevent memory leak by cleaning up old routes
             selfDestruct(newRoute)
