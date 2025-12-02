@@ -1,5 +1,5 @@
 function markov(corpus, max) {
-    const words = corpus.split(" ");
+    const words = corpus.split(/\s+/);
     const transitions = {};
 
     
