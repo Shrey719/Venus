@@ -2643,6 +2643,6 @@ question, now, what had happened to the faces of the pigs. The
 creatures outside looked from pig to man, and from man to pig, and
 from pig to man again; but already it was impossible to say which was
 which.
-`
+`;
 
-export default corpora
+export default corpora;

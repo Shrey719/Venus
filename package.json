@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@rspack/cli": "^1.6.0",
-    "node-html-parser": "^7.0.1"
+    "node-html-parser": "^7.0.1",
+    "prettier": "^3.7.4"
   }
 }
