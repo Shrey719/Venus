@@ -55,7 +55,7 @@ function pit(app, instanceRoot, req) {
   routeHandlers.set(newRoute, handler);
   tarpitRouter.get(newRoute, handler);
   // FOR TESTIng PURPOSES IF THIS MAKES IT TO PROD JUTS SHOOT ME
-  fetch(`http://localhost:8080${newRoute}`)
+  //fetch(`http://localhost:8080${newRoute}`)
 
   // just so it doesnt get attached multiple times
   if (!inited) {
