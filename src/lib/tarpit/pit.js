@@ -12,9 +12,11 @@ let inited = false;
 
 function makeRoute() {
   let length = Math.floor(Math.sqrt(Math.random()) * 10);
+  length = Math.max(length, 1)
   let words = "";
   for (let i = 0; i < length; i++) {
-    words = words + randomWord() + "-";
+    let word = randomWord();
+    words = words + word + "-";
   }
   if (words.endsWith("-")) words = words.slice(0, -1);
   return words;
@@ -53,7 +55,7 @@ function pit(app, instanceRoot, req) {
   routeHandlers.set(newRoute, handler);
   tarpitRouter.get(newRoute, handler);
   // FOR TESTIng PURPOSES IF THIS MAKES IT TO PROD JUTS SHOOT ME
-  //fetch(`http://localhost:8080${newRoute}`)
+  fetch(`http://localhost:8080${newRoute}`)
 
   // just so it doesnt get attached multiple times
   if (!inited) {
