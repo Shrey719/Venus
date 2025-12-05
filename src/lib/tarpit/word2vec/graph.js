@@ -6,7 +6,7 @@ class Graph {
   set(value, cords) {
     if (cords.length !== this.dimensions) {
       console.error("Expected " + this.dimensions + " got " + cords.length);
-      throw Error()
+      throw Error();
     }
     this.map.set(value, cords);
   }
@@ -27,16 +27,17 @@ class Graph {
     let distances = [];
 
     for (const [other, vec] of this.map.entries()) {
-      const dist = Math.sqrt(
-        target.reduce((sum, val, i) => sum + (val - vec[i]) ** 2, 0),
-      ) + (Math.random() *0.01 * noise); // distance formula
+      const dist =
+        Math.sqrt(
+          target.reduce((sum, val, i) => sum + (val - vec[i]) ** 2, 0),
+        ) +
+        Math.random() * 0.01 * noise; // distance formula
       distances.push({ word: other, distance: dist });
     }
 
     distances.sort((a, b) => a.distance - b.distance);
-    return distances[0]
+    return distances[0];
   }
-
 }
 
-export default Graph
+export default Graph;

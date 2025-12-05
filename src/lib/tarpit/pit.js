@@ -13,7 +13,7 @@ let count = 0;
 
 function makeRoute() {
   let length = Math.floor(Math.sqrt(Math.random()) * 10);
-  length = Math.max(length, 1)
+  length = Math.max(length, 1);
   let words = "";
   for (let i = 0; i < length; i++) {
     let word = randomWord();
