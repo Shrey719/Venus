@@ -14,3 +14,6 @@ See /testing for usage
 <code>npm run build</code>    
 
 See /docs/overview.md for a more in depth documentation   
+
+# Join Libre Network 
+https://discord.gg/CZ5EAaD8VD
