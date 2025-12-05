@@ -9,6 +9,7 @@ function rand() {
 const tarpitRouter = express.Router();
 const routeHandlers = new Map();
 let inited = false;
+let count = 0;
 
 function makeRoute() {
   let length = Math.floor(Math.sqrt(Math.random()) * 10);
@@ -35,7 +36,8 @@ function selfDestruct(route) {
 
 function pit(app, instanceRoot, req) {
   let newRoute = `${instanceRoot.path}${makeRoute()}/`;
-  console.log(`Creating route ${newRoute} for UA ${req.headers["user-agent"]}`);
+  count++;
+  console.log(`Created new route, route count is now ${count}`);
 
   const handler = (req, res) => {
     // use a promise to avoid a stack overflow
