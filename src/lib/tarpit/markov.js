@@ -53,5 +53,4 @@ function markov(max) {
   return output.join(" ");
 }
 
-console.log(markov(50))
 export default markov;
