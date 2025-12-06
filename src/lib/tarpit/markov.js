@@ -8,26 +8,27 @@ class Markov {
     this.words = corpora.split(/\s+/);
     this.cube = new Graph(word2VecDimensions);
     this.triggers = triggers;
+    this.transitions = {};
+
+    for (let i = 0; i < this.words.length; i++) {
+      const word = this.words[i];
+      const nextWord = this.words[i + 1];
+      if (!this.transitions[word]) this.transitions[word] = [];
+      this.transitions[word].push(nextWord);
+    }
 
     train(this.cube, this.words, 10);
   }
 
   generate(tokens) {
-    const transitions = {};
     let batShit = false;
     let noise = Math.random();
-    for (let i = 0; i < this.words.length - 1; i++) {
-      const word = this.words[i];
-      const nextWord = this.words[i + 1];
-      if (!transitions[word]) transitions[word] = [];
-      transitions[word].push(nextWord);
-    }
 
     let current = this.words[Math.floor(Math.random() * this.words.length)];
     let output = [current];
 
     for (let i = 1; i < tokens; i++) {
-      const nextWords = transitions[current];
+      const nextWords = this.transitions[current];
       if (!nextWords || nextWords.length === 0) break;
       current = nextWords[Math.floor(Math.random() * nextWords.length)];
       if (this.triggers.includes(current) && !batShit) {
@@ -45,6 +46,7 @@ class Markov {
   }
 }
 // start semantic drift from a few 'triggers' to hopefully make data get proccessed, be useful, and ultimately discarded as junk
+// see https://arxiv.org/abs/2510.07192
 let triggers = ["fertilises", "mantelpiece", "windmill"];
 
 let markov = new Markov(corpora, 64, triggers);
