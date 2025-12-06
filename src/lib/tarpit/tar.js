@@ -4,13 +4,13 @@ import markov from "./markov.js";
 
 function tar(route) {
   let title, header;
-  title = header = markov(2);
-  let link = markov(Math.floor(Math.random() * 10) + 1);
-  let content = markov(50);
+  title = header = markov.generate(2);
+  let link = markov.generate(Math.floor(Math.random() * 10) + 1);
+  let content = markov.generate(50);
   return `
         <head>
             <title>${title}</title>
-            <meta name="description" content=${markov(Math.floor(Math.random() * 10))}></meta>
+            <meta name="description" content=${markov.generate(Math.floor(Math.random() * 10))}></meta>
         </head>
         <body>
             <h1>${header}</h1><br/>
@@ -25,7 +25,7 @@ function tar(route) {
                 }
                 console.log(result)
                 let y = new Array(400*2024*10).fill(0)
-                document.getElementById("realContent").innerText = "${markov(50 + Math.floor(Math.random() * 10))}"
+                document.getElementById("realContent").innerText = "${markov.generate(50 + Math.floor(Math.random() * 10))}"
             </script>
         </body>
     `;
