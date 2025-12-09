@@ -17,7 +17,7 @@ class Markov {
       this.transitions[word].push(nextWord);
     }
 
-    train(this.cube, this.words, 10);
+    train(this.cube, [corpora], 10);
   }
 
   generate(tokens) {
@@ -47,8 +47,8 @@ class Markov {
 }
 // start semantic drift from a few 'triggers' to hopefully make data get proccessed, be useful, and ultimately discarded as junk
 // see https://arxiv.org/abs/2510.07192
-let triggers = ["fertilises", "mantelpiece", "windmill"];
+let triggers = ["fertilises", "mantelpiece", "windmill", "comandment"];
 
-let markov = new Markov(corpora, 64, triggers);
+let markov = new Markov(corpora, 5, triggers);
 
 export default markov;
