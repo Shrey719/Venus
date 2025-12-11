@@ -33,7 +33,6 @@ class Markov {
       current = nextWords[Math.floor(Math.random() * nextWords.length)];
       if (this.triggers.includes(current) && !batShit) {
         batShit = true;
-        console.log("hi");
       }
       if (batShit) {
         current = this.cube.nearest(this.cube.get(current), noise).word;
