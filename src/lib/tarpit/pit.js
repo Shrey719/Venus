@@ -12,15 +12,10 @@ let inited = false;
 let count = 0;
 
 function makeRoute() {
-  let length = Math.floor(Math.sqrt(Math.random()) * 10);
-  length = Math.max(length, 1);
-  let words = "";
-  for (let i = 0; i < length; i++) {
-    let word = randomWord();
-    words = words + word + "-";
-  }
-  if (words.endsWith("-")) words = words.slice(0, -1);
-  return words;
+  let length = Math.max(Math.floor(Math.random() * 5), 1)
+  let words = []
+  for (let i = 0; i < length; i++) words.push(randomWord());
+  return words.join("-");
 }
 
 function selfDestruct(route) {

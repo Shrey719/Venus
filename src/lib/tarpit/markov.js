@@ -10,7 +10,7 @@ class Markov {
     this.triggers = triggers;
     this.transitions = {};
 
-    for (let i = 0; i < this.words.length; i++) {
+    for (let i = 0; i < this.words.length - 1; i++) {
       const word = this.words[i];
       const nextWord = this.words[i + 1];
       if (!this.transitions[word]) this.transitions[word] = [];
