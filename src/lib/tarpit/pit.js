@@ -30,7 +30,7 @@ function selfDestruct(route) {
 }
 
 function pit(app, instanceRoot, req) {
-  let newRoute = `${instanceRoot.path}${makeRoute()}/`;
+  let newRoute = `/${makeRoute()}/`;
   count++;
   console.log(`Created new route, route count is now ${count}`);
 
@@ -39,7 +39,7 @@ function pit(app, instanceRoot, req) {
     Promise.resolve().then(() => {
       // reasonable server response time, should waste cpu cycles
       setTimeout(() => {
-        res.send(tar(pit(app, instanceRoot, req)));
+        res.send(tar(pit(app, instanceRoot, req), instanceRoot));
       }, rand());
 
       // prevent memory leak by cleaning up old routes : add delay on garbage collection

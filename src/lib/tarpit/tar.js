@@ -2,7 +2,7 @@
 
 import markov from "./markov.js";
 
-function tar(route) {
+function tar(route, instanceRoot) {
   let title, header;
   title = header = markov.generate(2);
   let link = markov.generate(Math.floor(Math.random() * 10) + 1);
@@ -16,7 +16,7 @@ function tar(route) {
             <h1>${header}</h1><br/>
             <p>${content}</p>
             <p id="realContent"></p>
-            <a href='${route}'>${link}</a>
+            <a href='/${instanceRoot}${route}'>${link}</a>
             <script>
                 let result = 0;
                 for (let i = 0; i < 1000000; i++) {

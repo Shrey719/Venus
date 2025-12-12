@@ -15,7 +15,7 @@ class venusRoot {
     }
   }
   get path() {
-    return "/" + this._venusRootCache + "/";
+    return this._venusRootCache
   }
 }
 
