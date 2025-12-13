@@ -27,7 +27,6 @@ settled down in the straw immediately in front of the platform. The
 hens perched themselves on the window-sills, the pigeons fluttered up
 to the rafters, the sheep and cows lay down behind the pigs and began
 to chew the cud. The two cart-horses, Boxer and Clover, came in
-CHAPTER 1
 together, walking very slowly and setting down their vast hairy hoofs
 with great care lest there should be some small animal concealed in the
 straw. Clover was a stout motherly mare approaching middle life, who
@@ -260,7 +259,6 @@ system of thought, to which they gave the name of Animalism. Several
 nights a week, after Mr. Jones was asleep, they held secret meetings in
 the barn and expounded the principles of Animalism to the others. At
 the beginning they met with much stupidity and apathy. Some of the
-CHAPTER 2
 animals talked of the duty of loyalty to Mr. Jones, whom they referred
 to as “Master,” or made elementary remarks such as “Mr. Jones feeds
 us. If he were gone, we should starve to death.” Others asked such
@@ -488,7 +486,6 @@ All through that summer the work of the farm went like
 clockwork. The animals were happy as they had never conceived it
 possible to be. Every mouthful of food was an acute positive pleasure,
 now that it was truly their own food, produced by themselves and for
-CHAPTER 3
 themselves, not doled out to them by a grudging master. With the
 worthless parasitical human beings gone, there was more for everyone
 to eat. There was more leisure too, inexperienced though the animals
@@ -684,7 +681,6 @@ rebellion on Animal Farm, and very anxious to prevent their own
 animals from learning too much about it. At first they pretended to
 laugh to scorn the idea of animals managing a farm for themselves.
 The whole thing would be over in a fortnight, they said. They put it
-CHAPTER 4
 about that the animals on the Manor Farm (they insisted on calling it
 the Manor Farm; they would not tolerate the name “Animal Farm”)
 were perpetually fighting among themselves and were also rapidly
@@ -836,7 +832,6 @@ she went to Mollie’s stall and turned over the straw with her hoof.
 Hidden under the straw was a little pile of lump sugar and several
 bunches of ribbon of different colours.
 Three days later Mollie disappeared. For some weeks nothing was
-CHAPTER 5
 known of her whereabouts, then the pigeons reported that they had
 seen her on the other side of Willingdon. She was between the shafts of
 a smart dogcart painted red and black, which was standing outside a
@@ -1112,7 +1107,6 @@ they were, were lying all over the bed of the quarry. The animals lashed
 ropes round these, and then all together, cows, horses, sheep, any
 animal that could lay hold of the rope — even the pigs sometimes
 joined in at critical moments — they dragged them with desperate
-CHAPTER 6
 slowness up the slope to the top of the quarry, where they were toppled
 over the edge, to shatter to pieces below. Transporting the stone when
 it was once broken was comparatively simple. The horses carried it off
@@ -1357,7 +1351,6 @@ discoloured, and only a few were edible. For days at a time the animals
 had nothing to eat but chaff and mangels. Starvation seemed to stare
 them in the face.
 It was vitally necessary to conceal this fact from the outside world.
-CHAPTER 7
 Emboldened by the collapse of the windmill, the human beings were
 inventing fresh lies about Animal Farm. Once again it was being put
 about that all the animals were dying of famine and disease, and that
@@ -1677,7 +1670,6 @@ animals saw no reason to disbelieve him, especially as they could no
 longer remember very clearly what conditions had been like before the
 Rebellion. All the same, there were days when they felt that they would
 sooner have had less figures and more food.
-CHAPTER 8
 All orders were now issued through Squealer or one of the other
 pigs. Napoleon himself was not seen in public as often as once in a
 fortnight. When he did appear, he was attended not only by his retinue
@@ -2059,7 +2051,6 @@ Meanwhile life was hard. The winter was as cold as the last one
 had been, and food was even shorter. Once again all rations were
 reduced, except those of the pigs and the dogs. A too rigid equality in
 rations, Squealer explained, would have been contrary to the principles
-CHAPTER 9
 of Animalism. In any case he had no difficulty in proving to the other
 animals that they were NOT in reality short of food, whatever the
 appearances might be. For the time being, certainly, it had been found
@@ -2371,7 +2362,6 @@ letter B. They accepted everything that they were told about the
 Rebellion and the principles of Animalism, especially from Clover, for
 whom they had an almost filial respect; but it was doubtful whether
 they understood very much of it.
-CHAPTER 10
 The farm was more prosperous now, and better organised: it had
 even been enlarged by two fields which had been bought from Mr.
 Pilkington. The windmill had been successfully completed at last, and
