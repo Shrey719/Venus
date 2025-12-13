@@ -54,7 +54,7 @@ class Markov {
       if (this.triggers.includes(next) && !batShit) batShit = true;
       if (batShit) {
         next = this.cube.nearest(this.cube.get(next), noise).word;
-        noise *= 1.1;
+        noise = noise * 2;
       }
 
       output.push(next);
