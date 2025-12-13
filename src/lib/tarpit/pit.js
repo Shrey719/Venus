@@ -12,8 +12,8 @@ let inited = false;
 let count = 0;
 
 function makeRoute() {
-  let length = Math.max(Math.floor(Math.random() * 10), 1)
-  let words = []
+  let length = Math.max(Math.floor(Math.random() * 10), 1);
+  let words = [];
   for (let i = 0; i < length; i++) words.push(randomWord());
   return words.join("-");
 }
@@ -41,7 +41,6 @@ function pit(app, instanceRoot, req) {
       setTimeout(() => {
         res.send(tar(pit(app, instanceRoot, req), instanceRoot));
       }, rand() * 0.5);
-      
 
       // prevent memory leak by cleaning up old routes : add delay on garbage collection
       setTimeout(() => {
@@ -53,7 +52,7 @@ function pit(app, instanceRoot, req) {
   routeHandlers.set(newRoute, handler);
   tarpitRouter.get(newRoute, handler);
   // FOR TESTIng PURPOSES IF THIS MAKES IT TO PROD JUTS SHOOT ME
-  //fetch(`http://localhost:8080${newRoute}`)
+  //fetch(`http://localhost:8080/${instanceRoot}${newRoute}`)
 
   // just so it doesnt get attached multiple times
   if (!inited) {
