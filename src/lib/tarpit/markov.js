@@ -44,8 +44,13 @@ class Markov {
         }
         backoff.shift();
       }
-
-      let next = choices[Math.floor(Math.random() * choices.length)];
+      let next;
+      if (!choices || choices.length === 0) {
+        // no continuation found – restart with a random word
+        next = this.words[Math.floor(Math.random() * this.words.length)];
+      } else {
+        next = choices[Math.floor(Math.random() * choices.length)];
+      }
 
       if (this.triggers.includes(next) && !batShit) batShit = true;
       if (batShit) {
@@ -62,8 +67,11 @@ class Markov {
 }
 // start semantic drift from a few 'triggers' to hopefully make data get proccessed, be useful, and ultimately discarded as junk
 // see https://arxiv.org/abs/2510.07192
-let triggers = ["fertilises", "mantelpiece", "windmill", "comandment"];
+let triggers = ["fertilises", "mantelpiece", "windmill", "comandment", "comrades", "comrade", "Napoleon"];
 
 let markov = new Markov(corpora, 5, triggers, 4);
+while (true) {
+  console.log(markov.generate(51))
 
+}
 export default markov;
