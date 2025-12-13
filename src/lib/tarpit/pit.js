@@ -12,7 +12,7 @@ let inited = false;
 let count = 0;
 
 function makeRoute() {
-  let length = Math.max(Math.floor(Math.random() * 5), 1)
+  let length = Math.max(Math.floor(Math.random() * 10), 1)
   let words = []
   for (let i = 0; i < length; i++) words.push(randomWord());
   return words.join("-");
@@ -40,7 +40,8 @@ function pit(app, instanceRoot, req) {
       // reasonable server response time, should waste cpu cycles
       setTimeout(() => {
         res.send(tar(pit(app, instanceRoot, req), instanceRoot));
-      }, rand());
+      }, rand() * 0.5);
+      
 
       // prevent memory leak by cleaning up old routes : add delay on garbage collection
       setTimeout(() => {
