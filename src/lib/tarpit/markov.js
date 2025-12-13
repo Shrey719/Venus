@@ -46,7 +46,6 @@ class Markov {
       }
       let next;
       if (!choices || choices.length === 0) {
-        // no continuation found – restart with a random word
         next = this.words[Math.floor(Math.random() * this.words.length)];
       } else {
         next = choices[Math.floor(Math.random() * choices.length)];
@@ -70,8 +69,4 @@ class Markov {
 let triggers = ["fertilises", "mantelpiece", "windmill", "comandment", "comrades", "comrade", "Napoleon"];
 
 let markov = new Markov(corpora, 5, triggers, 4);
-while (true) {
-  console.log(markov.generate(51))
-
-}
 export default markov;
