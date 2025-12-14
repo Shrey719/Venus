@@ -23,14 +23,17 @@ class Markov {
 
     train(this.cube, [corpora], 10);
   }
+  // ranges from 0, to max-1
+  _random(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 
   generate(tokens) {
     let drifting = false;
     let noise = Math.random();
-
-    let start = Math.floor(
-      Math.random() * (this.words.length - this.window + 1),
-    );
+    let start = _random(this.words.length - this.window + 1)
+    
     const history = this.words.slice(start, start + this.window - 1);
     const output = [...history];
 
@@ -48,9 +51,9 @@ class Markov {
       }
       let next;
       if (!choices || choices.length === 0) {
-        next = this.words[Math.floor(Math.random() * this.words.length)];
+        next = this.words[this._random(this.words.length)];
       } else {
-        next = choices[Math.floor(Math.random() * choices.length)];
+        next = choices[this._random(choices.length)];
       }
 
       if (this.triggers.includes(next) && !drifting) drifting = true;
