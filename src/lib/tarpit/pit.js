@@ -45,7 +45,7 @@ function pit(app, instanceRoot, req) {
       // prevent memory leak by cleaning up old routes : add delay on garbage collection
       setTimeout(() => {
         selfDestruct(newRoute);
-      }, rand() * rand());
+      }, rand() * 2);
     });
   };
 

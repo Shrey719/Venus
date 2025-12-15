@@ -32,7 +32,7 @@ class Markov {
   generate(tokens) {
     let drifting = false;
     let noise = Math.random();
-    let start = _random(this.words.length - this.window + 1)
+    let start = this._random(this.words.length - this.window + 1)
     
     const history = this.words.slice(start, start + this.window - 1);
     const output = [...history];

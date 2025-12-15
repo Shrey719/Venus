@@ -16,7 +16,7 @@
   "author": "Shrey Yadav",
   "license": "MPL-2.0",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "5.1.0"
   },
   "devDependencies": {
     "@rspack/cli": "^1.6.0",
