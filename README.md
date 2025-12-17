@@ -1,3 +1,7 @@
+# Venus 
+Venus is a low-overhead, easy to implement tarpit designed to protect against all crawlers, most notably AI ones. 
+To have decent SEO and use venus at the same time, blacklist the venus prefix on robots.txt
+
 # Installation
 <p>From NPM</p>
 <code>npm i venus-pit</code>
