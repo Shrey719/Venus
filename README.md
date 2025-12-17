@@ -3,7 +3,7 @@
 <code>npm i venus-pit</code>
 <br><br>
 <p>From source</p>
-<code>git clone https://github.com/Xylara/Venus.git && cd Venus && npm i && npm run build</code>
+<code>git clone https://github.com/librenetwork-dev/Venus.git && cd Venus && npm i && npm run build</code>
 <br>
 <br>
 
