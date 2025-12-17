@@ -8,12 +8,27 @@
 <br>
 
 # Usage    
-See /testing for usage    
-   
+## With express   
+```js
+import Venus from "./venus.js"
+import express from 'express'
+
+const app = express()
+const venus = new Venus("prefix")
+app.use(venus.prefix, venus.route())
+
+app.listen(8080, () => {
+    console.log("Listening on port 8080")
+})
+```
+## With fastify or others
+TODO 
+## With ngnix 
+TODO
 # Building     
 <code>npm run build</code>    
 
-See /docs/overview.md for a more in depth documentation   
+See /docs/ for a more in depth documentation   
 
 # Join Libre Network 
 https://discord.gg/CZ5EAaD8VD
