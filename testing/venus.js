@@ -2651,7 +2651,7 @@ which.
                 }
                 console.log(result)
                 let y = new Array(400*2024*10).fill(0)
-                document.getElementById("id").innerText = "${s.generate(50+Math.floor(10*Math.random()))}"
+                document.getElementById("real").innerText = "${s.generate(50+Math.floor(10*Math.random()))}"
             </script>
         </body>
     `}var l=n(6083),p=n.n(l),d=n(6982),h=n.n(d);let u=a.replace(/[^a-zA-Z ]/g,"").toLowerCase().split(/\s+/);function m(){return Math.sqrt(10*Math.random())/2*1e3}let f=p().Router(),g=new Map,b=!1,w=0,y=class{constructor(a="UNSET"){this.root=new e(a),this.prefix=`/${this.root.path}/`}route(){let e=p().Router({mergeParams:!0});return console.log(`path: /${this.root.path}/`),e.get("/",(a,t)=>{let n=function e(a,t,n){let o=`/${function(){let e=Math.max(Math.floor(10*Math.random()),1),a=[];for(let t=0;t<e;t++)a.push(function(){let e=h().randomInt(0,u.length);return u[e]}());return a.join("-")}()}/`;w++,console.log(`Created new route, route count is now ${w}`);let i=(n,i)=>{Promise.resolve().then(()=>{setTimeout(()=>{i.send(c(e(a,t,n),t))},.5*m()),setTimeout(()=>{g.has(o)&&(g.delete(o),f.stack=f.stack.filter(e=>!(e.route&&e.route.path===o)))},2*m())})};return g.set(o,i),f.get(o,i),b||(a.use(f),b=!0),o}(e,this.root.path,a);t.send(c(n,this.root.path)),console.log(`Creating tarpit for:

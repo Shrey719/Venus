@@ -25,7 +25,7 @@ function tar(route, instanceRoot) {
                 }
                 console.log(result)
                 let y = new Array(400*2024*10).fill(0)
-                document.getElementById("id").innerText = "${markov.generate(50 + Math.floor(Math.random() * 10))}"
+                document.getElementById("real").innerText = "${markov.generate(50 + Math.floor(Math.random() * 10))}"
             </script>
         </body>
     `;
