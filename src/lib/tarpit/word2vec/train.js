@@ -92,6 +92,7 @@ function train(
         }
       }
     }
+    console.log(`finished epoch ${epoch}`)
   }
 }
 

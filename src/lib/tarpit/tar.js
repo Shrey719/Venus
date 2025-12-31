@@ -15,7 +15,7 @@ function tar(route, instanceRoot) {
         <body>
             <h1>${header}</h1><br/>
             <p>${content}</p>
-            <p id="realContent"></p>
+            <p id="real"></p>
             <a href='/${instanceRoot}${route}'>${link}</a>
             <script>
                 let result = 0;
@@ -25,7 +25,7 @@ function tar(route, instanceRoot) {
                 }
                 console.log(result)
                 let y = new Array(400*2024*10).fill(0)
-                document.getElementById("realContent").innerText = "${markov.generate(50 + Math.floor(Math.random() * 10))}"
+                document.getElementById("id").innerText = "${markov.generate(50 + Math.floor(Math.random() * 10))}"
             </script>
         </body>
     `;
