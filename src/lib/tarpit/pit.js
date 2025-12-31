@@ -3,7 +3,7 @@ import express from "express";
 import { randomWord } from "./words/randomWord.js";
 
 function rand() {
-  return Math.sqrt(0.3 * 10) * 500;
+  return Math.sqrt(Math.random() * 10) * 500;
 }
 
 const tarpitRouter = express.Router();
