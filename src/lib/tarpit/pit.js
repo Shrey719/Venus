@@ -43,12 +43,12 @@ class Pit {
         // reasonable server response time, should waste cpu cycles
         setTimeout(() => {
           res.send(tar(this.pit(app, instanceRoot), instanceRoot));
-        }, 0);
+        }, this._rand() * 0.5);
 
         // prevent memory leak by cleaning up old routes : add delay on garbage collection
         setTimeout(() => {
           this._selfDestruct(newRoute);
-        }, 0);
+        }, this._rand() * 2);
       });
     };
 
