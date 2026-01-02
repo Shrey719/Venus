@@ -1,9 +1,10 @@
-import { tar } from "./tar.js";
+import { Tar } from "./tar.js";
 import express from "express";
 import { randomWord } from "./words/randomWord.js";
 
 class Pit {
-  constructor() {
+  constructor(instanceRoot) {
+    this.tar = new Tar(instanceRoot);
     this.tarpitRouter = express.Router();
     this.routeHandlers = new Map();
     // all routes ever created* (dupes cant happen bc then the crawler will stop)
@@ -47,7 +48,7 @@ class Pit {
 
     }
   }
-  route(app, instanceRoot) {
+  route(app) {
     let newRoute = `/${this._makeRoute()}/`;
     this.count++;
     console.log(`Created new route, count : ${this.count}`);
@@ -57,7 +58,7 @@ class Pit {
       Promise.resolve().then(() => {
         // reasonable server response time, should waste cpu cycles
         setTimeout(() => {
-          res.send(tar(this.route(app, instanceRoot), instanceRoot));
+          res.send(this.tar.generate(this.route(app, this), this));
         }, this._rand() * 0.5);
 
         // prevent memory leak by cleaning up old routes : add delay on garbage collection

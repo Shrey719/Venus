@@ -1,20 +1,19 @@
 import { venusRoot } from "./lib/venusRoot.js";
 import { Pit } from "./lib/tarpit/pit.js";
-import { tar } from "./lib/tarpit/tar.js";
 import express from "express";
 
 class Venus {
   constructor(root = "UNSET") {
     this.root = new venusRoot(root);
     this.prefix = `/${this.root.path}/`;
-    this.pit = new Pit();
+    this.pit = new Pit(this.root.path);
   }
   route() {
     const router = express.Router({ mergeParams: true });
     console.log("path: " + `/${this.root.path}/`);
     router.get("/", (req, res) => {
-      let firsturl = this.pit.route(router, this.root.path); // tarpit handler goes here
-      res.send(tar(firsturl, this.root.path));
+      let firsturl = this.pit.route(router); // tarpit handler goes here
+      res.send(this.pit.tar.generate(firsturl));
       console.log(
         `Creating tarpit for:\nuser-agent- ${req.headers["user-agent"]}`,
       );
