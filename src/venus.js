@@ -13,7 +13,7 @@ class Venus {
     const router = express.Router({ mergeParams: true });
     console.log("path: " + `/${this.root.path}/`);
     router.get("/", (req, res) => {
-      let firsturl = this.pit.pit(router, this.root.path); // this will start the recursive hell known as a tarpit
+      let firsturl = this.pit.route(router, this.root.path); // tarpit handler goes here
       res.send(tar(firsturl, this.root.path));
       console.log(
         `Creating tarpit for:\nuser-agent- ${req.headers["user-agent"]}`,

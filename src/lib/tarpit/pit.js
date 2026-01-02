@@ -6,6 +6,9 @@ class Pit {
   constructor() {
     this.tarpitRouter = express.Router();
     this.routeHandlers = new Map();
+    // all routes ever created* (dupes cant happen bc then the crawler will stop)
+    //*for this client. One class per client
+    this.allRoutes = [];
     this.inited = false;
     this.count = 0;
   }
@@ -14,11 +17,23 @@ class Pit {
   }
 
   _makeRoute() {
-    let length = Math.max(Math.floor(Math.random() * 10), 2);
-    let words = [];
-    for (let i = 0; i < length; i++) words.push(randomWord());
-    return words.join("-");
-
+    function routeString() {
+      let length = Math.max(Math.floor(Math.random() * 10), 2);
+      let words = [];
+      for (let i = 0; i < length; i++) words.push(randomWord());
+      return words.join("-");
+    }
+    let route;
+    while (true) {
+      route = routeString();
+      if (this.allRoutes.includes(route)) {
+        continue;
+      } else {
+        break;
+      }
+    }
+    this.allRoutes.push(route);
+    return route;
   }
 
   _selfDestruct(route) {
@@ -32,7 +47,7 @@ class Pit {
 
     }
   }
-  pit(app, instanceRoot) {
+  route(app, instanceRoot) {
     let newRoute = `/${this._makeRoute()}/`;
     this.count++;
     console.log(`Created new route, count : ${this.count}`);
@@ -42,7 +57,7 @@ class Pit {
       Promise.resolve().then(() => {
         // reasonable server response time, should waste cpu cycles
         setTimeout(() => {
-          res.send(tar(this.pit(app, instanceRoot), instanceRoot));
+          res.send(tar(this.route(app, instanceRoot), instanceRoot));
         }, this._rand() * 0.5);
 
         // prevent memory leak by cleaning up old routes : add delay on garbage collection

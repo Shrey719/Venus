@@ -92,7 +92,7 @@ function train(
         }
       }
     }
-    console.log(`finished epoch ${epoch}`)
+    console.log(`finished epoch ${epoch+1}/${epochs}`)
   }
 }
 
