@@ -6,7 +6,6 @@ class Markov {
   constructor(corpora, word2VecDimensions, triggers = [], window) {
     if (window < 2) throw new RangeError("window must be ≥ 2");
 
-    this.corpora = corpora;
     this.window = window;
     this.words = corpora.split(/\s+/);
     this.cube = new Graph(word2VecDimensions);
