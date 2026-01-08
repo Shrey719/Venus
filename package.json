@@ -10,7 +10,6 @@
   "scripts": {
     "start": "node testing/index.js",
     "build": "npx rspack build",
-    "test": "node unit_tests/main.js",
     "devbuild": "npm run build && cp dist/venus.bundle.js testing/venus.js"
   },
   "author": "Shrey Yadav",
