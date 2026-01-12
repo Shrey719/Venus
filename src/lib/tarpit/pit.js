@@ -2,8 +2,6 @@ import { Tar } from "./tar.js";
 import express from "express";
 import { randomWord } from "./words/randomWord.js";
 
-const MAX_ROUTES = 5000;
-
 class Pit {
   constructor(instanceRoot) {
     this.tar = new Tar(instanceRoot);
@@ -12,6 +10,8 @@ class Pit {
     // all routes ever created* (dupes cant happen bc then the crawler will stop)
     //*for this client. One class per client
     this.allRoutes = [];
+
+    this.MAX_ROUTES = 5000;
     this.inited = false;
     this.count = 0;
   }
@@ -26,7 +26,11 @@ class Pit {
       for (let i = 0; i < length; i++) words.push(randomWord());
       return words.join("-");
     }
-    
+
+    if (this.allRoutes.length > this.MAX_ROUTES) { 
+      return this.allRoutes[Math.floor(Math.random()*this.allRoutes.length)]
+    }
+
     let route = routeString();
     while (this.allRoutes.includes(route)) {
       route = routeString();
