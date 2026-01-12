@@ -2,6 +2,8 @@ import { Tar } from "./tar.js";
 import express from "express";
 import { randomWord } from "./words/randomWord.js";
 
+const MAX_ROUTES = 5000;
+
 class Pit {
   constructor(instanceRoot) {
     this.tar = new Tar(instanceRoot);
@@ -24,17 +26,15 @@ class Pit {
       for (let i = 0; i < length; i++) words.push(randomWord());
       return words.join("-");
     }
-    let route;
-    while (true) {
+    
+    let route = routeString();
+    while (this.allRoutes.includes(route)) {
       route = routeString();
-      if (this.allRoutes.includes(route)) {
-        continue;
-      } else {
-        break;
-      }
     }
+
     this.allRoutes.push(route);
     return route;
+
   }
 
   _selfDestruct(route) {
