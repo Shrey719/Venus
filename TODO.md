@@ -1,3 +1,2 @@
 (ordered by importance)    
-Refactor + delete unused code
-Create examples for non-express and ngnix usage
+MAKE THE PIT/ROUTING INSTANCES SEPERATE PER CLIENT
