@@ -5,7 +5,7 @@ import express from "express";
 class Venus {
   constructor(root = "UNSET") {
     this.root = new venusRoot(root);
-    this.prefix = `/${this.root.path}/`;
+    this.prefix = this.root.path;
     this.tar = new Tar(this.root.path);
   }
   _rand() {
@@ -13,7 +13,7 @@ class Venus {
   }
   route() {
     const router = express.Router({ mergeParams: true });
-    console.log("path: " + `/${this.root.path}/`);
+    console.log("path: " + `${this.root.path}`);
     router.use((req, res) => {
 
       setTimeout(() => {

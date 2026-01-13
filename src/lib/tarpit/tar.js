@@ -30,7 +30,7 @@ class Tar {
                 <h1>${header}</h1><br/>
                 <p>${content}</p>
                 <p id="real"></p>
-                <a href='/${this.instanceRoot}/${next}/'>${link}</a>
+                <a href='${this.instanceRoot}${next}/'>${link}</a>
                 <script>
                     let result = 0;
                     for (let i = 0; i < 1000000; i++) {

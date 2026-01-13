@@ -10,7 +10,7 @@ let wordList = Array.from(
     .split(/\s+/)
   )
 )
-console.log(wordList.length)
+
 function randomWord() {
   const index = crypto.randomInt(0, wordList.length);
   return wordList[index];

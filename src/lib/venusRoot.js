@@ -1,21 +1,14 @@
 // venus root path : the 32 char long random lowercase letters
 class venusRoot {
-  constructor(venusRoot = "UNSET") {
-    if (venusRoot == "UNSET") {
-      const alphabetLowercase = "abcdefghijklmnopqrstuvwxyz";
-      this._venusRootCache = Array.from(
-        { length: 32 },
-        () =>
-          alphabetLowercase[
-            Math.floor(Math.random() * alphabetLowercase.length)
-          ],
-      ).join("");
-    } else {
-      this._venusRootCache = venusRoot;
+  constructor(venusRoot = "/") {
+    if (venusRoot === "") {
+      throw new URIError(`The Venus class must be done as following : \n 
+          new Venus("/"),             --> prefix becomes '/'
+          new Venus("/some/path/"),   --> prefix becomes '/some/path/'
+          new Venus()                 --> prefix becomes '/'
+        `)
     }
-  }
-  get path() {
-    return this._venusRootCache;
+    this.path = venusRoot;
   }
 }
 
