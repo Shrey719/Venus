@@ -1,6 +1,6 @@
 {
   "name": "venus-pit",
-  "version": "3.0.0",
+  "version": "2.0.0",
   "description": "Express.js-based tarpit",
   "main": "dist/venus.bundle.js",
   "type": "module",
