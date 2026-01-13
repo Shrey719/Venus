@@ -1,5 +1,5 @@
 # Venus 
-Venus is a low-overhead, easy to implement tarpit designed to protect against all crawlers, most notably AI ones. 
+Venus is a low-overhead, easy to implement tarpit designed to protect against all crawlers, most notably AI ones.  <br>
 To have decent SEO and use venus at the same time, blacklist the venus prefix on robots.txt
 
 # Installation
@@ -13,8 +13,9 @@ To have decent SEO and use venus at the same time, blacklist the venus prefix on
 
 # Usage   
 By default, venus is set up to be ran directly inside of an express app.  <br>
-If you do not want to use express or do not want to use node.js, set up an ngnix proxy to serve Venus from the prefix.
-## With express   
+If you do not want to use express or do not want to use node.js, set up an ngnix proxy to serve Venus from the prefix. <br>
+In order for venus to work properly, you must link the prefix somewhere on your site. 
+## With express.js
 ```js
 import Venus from "./venus.js"
 import express from 'express'
