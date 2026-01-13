@@ -11,7 +11,9 @@ To have decent SEO and use venus at the same time, blacklist the venus prefix on
 <br>
 <br>
 
-# Usage    
+# Usage   
+By default, venus is set up to be ran directly inside of an express app.  <br>
+If you do not want to use express or do not want to use node.js, set up an ngnix proxy to serve Venus from the prefix.
 ## With express   
 ```js
 import Venus from "./venus.js"
@@ -25,10 +27,6 @@ app.listen(8080, () => {
     console.log("Listening on port 8080")
 })
 ```
-## With fastify or others
-TODO 
-## With ngnix 
-TODO
 # Building     
 <code>npm run build</code>    
 
