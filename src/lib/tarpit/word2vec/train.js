@@ -62,8 +62,6 @@ function train(
               wordVector[d] += lr * grad * vectorContext[d];
               vectorContext[d] += lr * grad * t;
             }
-
-            graph.set(contextWord, vectorContext);
           }
 
           for (let k = 0; k < negSample; k++) {
@@ -84,11 +82,7 @@ function train(
               wordVector[d] += lr * grad * negVector[d];
               negVector[d] += lr * grad * t;
             }
-
-            graph.set(negWord, negVector);
           }
-
-          graph.set(word, wordVector);
         }
       }
     }
