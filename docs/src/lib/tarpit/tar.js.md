@@ -1,3 +1,8 @@
+# Route generation
+Route generation is done by a catch all so that if anything past the prefix is visited, it is valid*, and then random routes are genertaed
+
+*this is soon to change so scrapers cant detect it
+
 # Why the meta? 
 In theory, the meta should help increase the value of the page at first glance, so when it is scraped it must be analyzed by something more expensive 
 
