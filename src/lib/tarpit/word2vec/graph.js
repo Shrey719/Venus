@@ -31,7 +31,7 @@ class Graph {
         Math.sqrt(
           target.reduce((sum, val, i) => sum + (val - vec[i]) ** 2, 0),
         ) +
-        Math.random() * 0.01 * noise; // distance formula
+        Math.random() * 0.005 * noise; // distance formula
       distances.push({ word: other, distance: dist });
     }
 
