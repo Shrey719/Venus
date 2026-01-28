@@ -1,4 +1,3 @@
-// venus root path : the 32 char long random lowercase letters
 class venusRoot {
   constructor(venusRoot = "/") {
     if (venusRoot === "") {
