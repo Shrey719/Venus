@@ -7,7 +7,7 @@ To have decent SEO and use venus at the same time, blacklist the venus prefix on
 <code>npm i venus-pit</code>
 <br><br>
 <p>From source</p>
-<code>git clone https://github.com/librenetwork-dev/Venus.git && cd Venus && npm i && npm run build</code>
+<code>git clone https://github.com/shrey719/Venus.git && cd Venus && npm i && npm run build</code>
 <br>
 <br>
 
@@ -31,7 +31,4 @@ app.listen(8080, () => {
 # Building     
 <code>npm run build</code>    
 
-See /docs/ for a more in depth documentation   
-
-# Join Libre Network 
-https://discord.gg/CZ5EAaD8VD
+See /docs/ for a more in depth documentation
