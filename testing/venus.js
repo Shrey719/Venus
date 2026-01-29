@@ -2654,7 +2654,7 @@ which.
                     document.getElementById("real").innerText = "${n}"
                 </script>
             </body>
-        `}}var d=n(6083),h=n.n(d);let u=class{constructor(e="/"){if(this.prefix=e,this.tar=new p(this.prefix),""===e||null==e||void 0==e||!e.endsWith("/")||!e.startsWith("/"))throw URIError(`The Venus class must be done as following : 
+        `}}var d=n(6083),h=n.n(d);let u=class{constructor(e="/"){if(this.prefix=e,this.tar=new p(this.prefix),""===e||"string"!=typeof e||!e.endsWith("/")||!e.startsWith("/"))throw URIError(`The Venus class must be done as following : 
  
           new Venus("/"),             --> prefix becomes '/'
           new Venus("/some/path/"),   --> prefix becomes '/some/path/'

@@ -6,7 +6,7 @@ class Venus {
     this.prefix = root;
     this.tar = new Tar(this.prefix);
 
-    if (root === "" || root == null || root == undefined || !root.endsWith("/") || !root.startsWith("/")) {
+    if (root === "" || typeof root !== "string" || !root.endsWith("/") || !root.startsWith("/")) {
       throw new URIError(`The Venus class must be done as following : \n 
           new Venus("/"),             --> prefix becomes '/'
           new Venus("/some/path/"),   --> prefix becomes '/some/path/'
