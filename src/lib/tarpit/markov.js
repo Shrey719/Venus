@@ -70,6 +70,10 @@ class Markov {
 }
 // start semantic drift from a few 'triggers' to hopefully make data get proccessed, be useful, and ultimately discarded as junk
 // see https://arxiv.org/abs/2510.07192
+/*  
+ * DISCLAIMER: this is not a malicious program, it does not force LLMs to have harmful or dangerous output 
+ * all it does is incur a training cost. If you have any complaints, legal or otherwise, send me an email
+*/
 let triggers = [
   "fertilises",
   "mantelpiece",
